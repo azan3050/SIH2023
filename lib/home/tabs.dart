@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:new_app/search.dart';
-import 'package:new_app/settings_page.dart';
-import 'alexaaa.dart';
+import 'package:new_app/Schemes.dart';
+import 'package:new_app/profile_tab.dart';
+import 'package:new_app/FAQs.dart';
 import 'home_tab.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,9 +17,9 @@ class _HomePageState extends State<HomePage> {
 
   static List<Widget> _widgetOptions = <Widget>[
     HomeTab(),
-    Find(),
-    AI(),
-    Settings(),
+    Community(),
+    FAQs(),
+    Profile(),
   ];
 
   @override
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.transparent,
           color: Colors.black,
           activeColor: Colors.white,
-          tabBackgroundColor: Color.fromRGBO(148, 59, 59, 1.0),
+          tabBackgroundColor: Color.fromARGB(255, 183, 90, 164),
           gap: 10,
           selectedIndex: _page,
           onTabChange: (index) {
@@ -53,20 +53,35 @@ class _HomePageState extends State<HomePage> {
               text: 'Home',
             ),
             GButton(
-              icon: Icons.search_sharp,
-              text: 'Find',
+              icon: Icons.help,
+              text: 'Schemes',
             ),
             GButton(
-              icon: Icons.mic,
-              text: 'Ask AI',
+              icon: Icons.question_answer,
+              text: 'FAQs',
             ),
             GButton(
-              icon: Icons.settings,
-              text: 'Setting',
+              icon: Icons.person_2,
+              text: 'Profile',
             ),
+            // GButton(
+            //   icon: Icons.notification_important,
+            //   text: 'Notifications',
+            // ),
           ],
         ),
       ),
     );
+  }
+}
+
+class Community extends StatelessWidget {
+  const Community({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Find();
   }
 }

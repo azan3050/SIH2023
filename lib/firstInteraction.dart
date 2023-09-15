@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:after_layout/after_layout.dart';
-
-import 'Intro.dart';
-import 'main_page.dart';
-
+import 'introductionPage/Intro.dart';
+import 'home/main_page.dart';
 
 class Introduction extends StatefulWidget {
   const Introduction({Key? key}) : super(key: key);
@@ -12,7 +10,9 @@ class Introduction extends StatefulWidget {
   @override
   State<Introduction> createState() => _IntroductionState();
 }
-class _IntroductionState extends State<Introduction> with AfterLayoutMixin<Introduction> {
+
+class _IntroductionState extends State<Introduction>
+    with AfterLayoutMixin<Introduction> {
   Future checkFirstSeen() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool _seen = (prefs.getBool('seen') ?? false);
@@ -32,8 +32,8 @@ class _IntroductionState extends State<Introduction> with AfterLayoutMixin<Intro
 
   @override
   Widget build(BuildContext context) {
-  return Scaffold(
-    body: Center(child: Text('Loading')),
-  );
+    return Scaffold(
+      body: Center(child: Text('Loading')),
+    );
   }
 }

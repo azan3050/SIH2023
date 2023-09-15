@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'main_page.dart';
+import '/home/main_page.dart';
 
 class IntroPage extends StatefulWidget {
   IntroPage({Key? key}) : super(key: key);
